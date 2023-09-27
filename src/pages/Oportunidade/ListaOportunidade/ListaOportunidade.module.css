@@ -1,0 +1,18 @@
+.container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  /* border: solid 1px red; */
+}
+
+.err {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  cursor: auto;
+}

@@ -1,0 +1,44 @@
+.container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  /* border: solid 1px red; */
+}
+
+.breadcumb {
+  background-color: #1a4976;
+  padding: 0.2rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+}
+
+.titulo {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.subtitulo {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.acao {
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  gap: 0.3rem;
+}
+
+.acao:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}

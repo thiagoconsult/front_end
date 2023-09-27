@@ -1,0 +1,25 @@
+version: "3"
+
+volumes:
+  frontend:
+
+services:
+  service-4:
+    container_name: frontend
+    build:
+      context: .
+    stop_signal: SIGINT
+    ports:
+      - "3000:3000"
+    volumes:
+      - frontend:/frontend
+      - /frontend/node_modules
+    restart: unless-stopped
+    stdin_open: true
+    networks:
+      - mvp3
+    command: ["npm", "start"]
+
+networks:
+  mvp3:
+    driver: bridge

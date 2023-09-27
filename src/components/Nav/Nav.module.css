@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  color: white;
+}
+
+/* .nav, */
+a {
+  background-color: #2a75bb;
+  border-radius: 5px;
+}
+
+/* .nav, */
+h3,
+h4 {
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* .nav, */
+a:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.active {
+  transform: scale(1.1);
+  background-color: #0f263c;
+}
