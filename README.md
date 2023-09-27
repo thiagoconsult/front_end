@@ -1,4 +1,4 @@
-# Front-end MyDemands
+# Front-end MyDemands:
 
 Esta APP foi desenvolvida para entrega do MVP da Sprint 3 da PUC-RIO. Ela foi desenvolvida em React e irá funcionar com 3 micro serviços desenvolvidos em Python/Flask.
 
