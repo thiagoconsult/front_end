@@ -2,6 +2,16 @@
 
 Esta APP foi desenvolvida para entrega do MVP da Sprint 3 da PUC-RIO. Ela foi desenvolvida em React e irá funcionar com 3 micro serviços desenvolvidos em Python/Flask.
 
+## O que esta Aplicação faz?
+
+Através do Frontend você poderá:
+
+1. Cadastrar e dar manutenção em empresas e pessoas;
+2. Cadastrar oportunidades de vendas para as empresas cadastradas e amarrar o contato das pessoas envolvidas no processo;
+3. Será possível alterar, consultar e excluir as 3 entidades através do frontend;
+4. Inserir updates em oportunidades abertas;
+5. Encerrar uma oportunidade.
+
 ## Microserviços para utilizar esta APP:
 
 | API-Microserviço | Funcionalidade                                  | Link                                                  |
