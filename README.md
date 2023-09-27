@@ -54,6 +54,7 @@ Para executar este projeto como container, siga os passos:
 
 2 - Crie um arquivo na raiz com o nome docker-compose.yml e cole o seguinte código:
 
+```
 version: "3"
 
 volumes:
@@ -111,6 +112,7 @@ command: ["npm", "start"]
 networks:
 mvp3:
 driver: bridge
+```
 
 3 - Acesse esta pasta pelo terminal ou pelo VSCODE e execute o comando:
 
