@@ -17,8 +17,8 @@ export const Home = () => {
   const { data: oportunidade_false } = useFetch(
     URL_API_OPORTUNIDADE + "/count/status?status=false"
   );
-  const { data: empresa } = useFetch(URL_API_EMPRESA + "/all");
-  const { data: pessoa } = useFetch(URL_API_PESSOA + "/all");
+  const { data: empresa } = useFetch(URL_API_EMPRESA + "/count");
+  const { data: pessoa } = useFetch(URL_API_PESSOA + "/count");
 
   console.log(oportunidade_true);
 
@@ -35,11 +35,13 @@ export const Home = () => {
             <h1>Oportunidades Fechadas</h1>
           </span>
           <span className={styles.card3}>
-            <h1>{Object.keys(pessoa).length}</h1>
+            {/* <h1>{Object.keys(pessoa).length}</h1> */}
+            <h1>{pessoa.quantidade}</h1>
             <h1>Pessoas</h1>
           </span>
           <span className={styles.card4}>
-            <h1>{Object.keys(empresa).length}</h1>
+            {/* <h1>{Object.keys(empresa).length}</h1> */}
+            <h1>{empresa.quantidade}</h1>
             <h1>Empresas</h1>
           </span>
         </div>
