@@ -45,3 +45,83 @@ Foi utilizado o serviço de API externa da VIACEP. No site não existe nada sobr
 [VIACEP](https://viacep.com.br//)
 
 Esta API externa foi utilizada no cadastro de empresas, onde, ao colocar o CEP, recebemos o endereço completo, porém, para esta aplicação, utilizamos apenas alguns dados.
+
+## EXECUTAR COM DOCKER
+
+Para executar este projeto como container, siga os passos:
+
+1 - Baixe as 3 APIs e o Frontend e coloque-os dentro da mesma pasta.
+
+2 - Crie um arquivo na raiz com o nome docker-compose.yml e cole o seguinte código:
+
+version: "3"
+
+volumes:
+api_empresa:
+api_pessoa:
+api_oportunidade:
+front_end:
+
+services:
+service-1:
+container_name: api_empresa
+build:
+context: ./api_empresa
+stop_signal: SIGINT
+ports: - "5001:5001"
+volumes: - api_empresa:/api_empresa
+restart: unless-stopped
+networks: - mvp3
+command: ["python", "run.py"]
+
+service-2:
+container_name: api_pessoa
+build:
+context: ./api_pessoa
+stop_signal: SIGINT
+ports: - "5002:5002"
+volumes: - api_pessoa:/api_pessoa
+restart: unless-stopped
+networks: - mvp3
+command: ["python", "run.py"]
+
+service-3:
+container_name: api_oportunidade
+build:
+context: ./api_oportunidade
+stop_signal: SIGINT
+ports: - "5003:5003"
+volumes: - api_oportunidade:/api_oportunidade
+restart: unless-stopped
+networks: - mvp3
+command: ["python", "run.py"]
+
+service-4:
+container_name: frontend
+build:
+context: ./front_end
+stop_signal: SIGINT
+ports: - "3000:3000"
+volumes: - front_end:/front_end - /front_end/node_modules
+restart: unless-stopped
+stdin_open: true
+networks: - mvp3
+command: ["npm", "start"]
+
+networks:
+mvp3:
+driver: bridge
+
+3 - Acesse esta pasta pelo terminal ou pelo VSCODE e execute o comando:
+
+```
+docker compose up -d
+```
+
+4 - Espere até que os 4 containers sejam criados e estejam em execução.
+
+5 - Execute a aplicação em :
+
+```
+http://localhost:3000/
+```
